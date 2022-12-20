@@ -1,7 +1,7 @@
 # Matatena
 
 A Webgame, based on the minigame of matatena from the game **Cult of the Lamb**.
-<div style="width:100%; display:grid; grid-auto-flow:column; gap:10px">
+<div style="width:80%; display:grid; grid-auto-flow:column; gap:10px">
 <img style="
 margin:auto;
 border-radius:20px" 
