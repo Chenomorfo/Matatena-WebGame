@@ -53,7 +53,7 @@ const createColumn = (Ncol, player, rival) => {
       player1.YouTurn = false;
       player2.YouTurn = false;
     }
-
+    document.getElementById("RandomDice").remove();
     nextDice();
   });
 
@@ -91,7 +91,7 @@ const nextDice = () => {
   let Number = Math.floor(Math.random() * 6);
   let randomDice = document.createElement("div");
   randomDice.classList.add("PreDice");
-  randomDice.setAttribute('id','RandomDice')
+  randomDice.setAttribute("id", "RandomDice");
   randomDice.innerHTML = Dices[Number];
 
   document.getElementById("Table").appendChild(randomDice);
@@ -101,9 +101,10 @@ const nextDice = () => {
   dice.value = Number + 1;
 };
 
-window.addEventListener('resize', e=>{
-  document.getElementById('RandomDice').style.scale = (window.innerWidth > 750 ? 100 : 50) + "%";
-})
+window.addEventListener("resize", (e) => {
+  document.getElementById("RandomDice").style.scale =
+    (window.innerWidth > 750 ? 100 : 50) + "%";
+});
 
 /* Start Game */
 setPlayers();
