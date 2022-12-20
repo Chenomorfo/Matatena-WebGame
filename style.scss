@@ -22,6 +22,18 @@ body {
 
   position: relative;
 
+  @media screen and (max-width:900px) {
+    scale: 75%;
+  }
+  @media screen and (max-width:750px) {
+    width: 300px;
+    height: 600px;
+    scale: 75%;
+  }
+  @media screen and (max-width : 430px) {
+    scale: 65%;
+  }
+
   #Player1{
     transform: rotateX(180deg);
   }
@@ -69,9 +81,15 @@ body {
 
   #P1Score{
     left: -650px;
+    @media screen and (max-width:750px) {
+      left: -450px;
+    }
   }
   #P2Score{
     left: 500px;
+    @media screen and (max-width:750px) {
+      left: 320px;
+    }
   }
 
 }
@@ -114,9 +132,14 @@ body {
   background-color: white;
   width: 150px;
   height: 150px;
+  border-radius: 20px;
+
   bottom: 2rem;
   left: -200px;
-  border-radius: 20px;
+  @media screen and (max-width:750px) {
+    left: -125px;
+  }
+  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);

@@ -1,5 +1,4 @@
 const setPlayers = () => {
-
   /* Giving the players their columns */
   for (let i = 0; i < 3; i++) {
     document
@@ -15,7 +14,6 @@ const setPlayers = () => {
 };
 
 const createColumn = (Ncol, player, rival) => {
- 
   /* config the column */
   let col = document.createElement("div");
   col.classList.add("column");
@@ -27,18 +25,24 @@ const createColumn = (Ncol, player, rival) => {
     switch (Ncol) {
       case 0:
         player.Column1.push(dice.value);
-        rival.Column1 = rival.Column1.filter(item => {return item != dice.value});
+        rival.Column1 = rival.Column1.filter((item) => {
+          return item != dice.value;
+        });
         DeleteDice(dice, rival.DrawCols[0]);
         break;
 
       case 1:
         player.Column2.push(dice.value);
-        rival.Column2 = rival.Column2.filter(item => {return item != dice.value});
+        rival.Column2 = rival.Column2.filter((item) => {
+          return item != dice.value;
+        });
         DeleteDice(dice, rival.DrawCols[1]);
         break;
       case 2:
         player.Column3.push(dice.value);
-        rival.Column3 = rival.Column3.filter(item => {return item != dice.value});
+        rival.Column3 = rival.Column3.filter((item) => {
+          return item != dice.value;
+        });
         DeleteDice(dice, rival.DrawCols[2]);
         break;
     }
@@ -87,14 +91,19 @@ const nextDice = () => {
   let Number = Math.floor(Math.random() * 6);
   let randomDice = document.createElement("div");
   randomDice.classList.add("PreDice");
+  randomDice.setAttribute('id','RandomDice')
   randomDice.innerHTML = Dices[Number];
 
   document.getElementById("Table").appendChild(randomDice);
-  randomDice.style.scale = 100 + "%";
+  randomDice.style.scale = (window.innerWidth > 750 ? 100 : 50) + "%";
 
   dice.elem = Dices[Number];
   dice.value = Number + 1;
 };
+
+window.addEventListener('resize', e=>{
+  document.getElementById('RandomDice').style.scale = (window.innerWidth > 750 ? 100 : 50) + "%";
+})
 
 /* Start Game */
 setPlayers();

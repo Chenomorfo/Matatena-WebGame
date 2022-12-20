@@ -20,6 +20,23 @@ body {
   gap: 15px;
   position: relative;
 }
+@media screen and (max-width: 900px) {
+  #Table {
+    scale: 75%;
+  }
+}
+@media screen and (max-width: 750px) {
+  #Table {
+    width: 300px;
+    height: 600px;
+    scale: 75%;
+  }
+}
+@media screen and (max-width: 430px) {
+  #Table {
+    scale: 65%;
+  }
+}
 #Table #Player1 {
   transform: rotateX(180deg);
 }
@@ -60,8 +77,18 @@ body {
 #Table #P1Score {
   left: -650px;
 }
+@media screen and (max-width: 750px) {
+  #Table #P1Score {
+    left: -450px;
+  }
+}
 #Table #P2Score {
   left: 500px;
+}
+@media screen and (max-width: 750px) {
+  #Table #P2Score {
+    left: 320px;
+  }
 }
 
 #StatusText {
@@ -100,14 +127,19 @@ body {
   background-color: white;
   width: 150px;
   height: 150px;
+  border-radius: 20px;
   bottom: 2rem;
   left: -200px;
-  border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   padding: 10px;
   gap: 5px;
+}
+@media screen and (max-width: 750px) {
+  .PreDice {
+    left: -125px;
+  }
 }
 .PreDice .dot {
   background-color: black;
