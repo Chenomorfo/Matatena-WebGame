@@ -99,6 +99,16 @@ const nextDice = () => {
 
   dice.elem = Dices[Number];
   dice.value = Number + 1;
+
+  if (player1.YouTurn) {
+    randomDice.style.bottom = '2rem'
+    randomDice.style.left = (window.innerWidth > 750 ? '-200px' : '-150px')
+  }else{
+    randomDice.style.bottom = '0'
+    randomDice.style.top = '2rem'
+    randomDice.style.left = (window.innerWidth > 750 ? '500px' : '300px')
+  }
+
 };
 
 window.addEventListener("resize", (e) => {
